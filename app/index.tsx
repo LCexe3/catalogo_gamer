@@ -15,7 +15,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-<Ionicons name="paw" size={200} color="rgb(9, 32, 240)"/>
+<Ionicons name="paw" size={200} color="rgb(42, 112, 218)"/>
       <Text style = {{fontSize: 20}}>Bem-vindo ao aplicativo do CastraPrev!</Text>
       <Text style = {{fontSize: 40,fontWeight:700}}>Evite a multiplicação!</Text>
                   <Botao onPress={() => {

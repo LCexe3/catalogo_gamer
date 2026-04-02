@@ -10,13 +10,13 @@ const router = useRouter()
     return (
       // buscar o estilo centralizado do arquivo styles.ts
         <View style={[styles.centralizado, { gap: 10 }]}>
-            <Ionicons name="laptop" size={200} color="rgb(9, 32, 240)"/>
-            <Text>Material Didático</Text>
+            <Ionicons name="laptop" size={200} color="rgb(42, 112, 218)"/>
+            <Text style = {{fontSize: 30,fontWeight:700}}>Material Didático do CastraPrev!</Text>
             
             <Botao onPress={() => {
                 router.push('/stack/download')
             }}>
-                <Link href="/stack/download" style={{ color: '#fff' }}>
+                <Link href="/stack/download" style={{ fontSize: 20, color: '#fff' }}>
                     Ir para Downloads
                 </Link>
             </Botao>

@@ -8,7 +8,7 @@ export default function Nova() {
     const router = useRouter()
     return (
         <View style={[styles.centralizado, { gap: 10 }]}>
-            <Ionicons name="arrow-down" size={200} color="rgb(9, 32, 240)"/>
+            <Ionicons name="arrow-down" size={200} color="rgb(42, 112, 218)"/>
             <Text>Downloads</Text>
             <Botao onPress={() => {
                 router.push('/')
