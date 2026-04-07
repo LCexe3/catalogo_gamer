@@ -8,7 +8,7 @@ export default class Cpf {
             .replace(/(\d{3})(\d{1,2})$/, '$1-$2')
     }
 
-    static desformatar(cpf: string): string {
+    static replacecpf(cpf: string): string {
         return cpf.replace(/\D/g, '')
     }
 }
