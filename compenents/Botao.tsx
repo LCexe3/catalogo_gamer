@@ -9,7 +9,13 @@ export interface BotaoProps {
 export default function Botao(props: BotaoProps) {
     return (
         <Pressable
-            style={({ pressed }) => [{ opacity: pressed ? 0.8 : 1 }, styles.botao]}
+            style={({ pressed }) => [
+                {
+                    opacity: pressed ? 0.85 : 1,
+                    transform: [{ scale: pressed ? 0.97 : 1 }]
+                },
+                styles.botao
+            ]}
             onPress={props.onPress}
         >
             {props.children}
@@ -19,9 +25,21 @@ export default function Botao(props: BotaoProps) {
 
 const styles = StyleSheet.create({
     botao: {
-        backgroundColor: '#3A7EFF',
-        paddingHorizontal: 15,
-        paddingVertical: 10,
-        borderRadius: 5,
+        backgroundColor: '#8a2be2',
+        paddingHorizontal: 24,
+        paddingVertical: 14,
+        borderRadius: 14,
+        borderWidth: 2,
+        borderColor: '#00ffcc',
+        shadowColor: '#00ffcc',
+        shadowOffset: {
+            width: 0,
+            height: 0
+        },
+        shadowOpacity: 0.8,
+        shadowRadius: 10,
+        elevation: 8,
+        minWidth: 180,
+        alignItems: 'center',
     },
 })

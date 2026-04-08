@@ -3,48 +3,70 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function Layout() {
   return (
-    <Drawer>
+    <Drawer
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#0d0d0d",
+        },
+        headerTintColor: "#00ffcc",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+        drawerStyle: {
+          backgroundColor: "#111",
+          width: 240,
+        },
+        drawerActiveTintColor: "#00ffcc",
+        drawerInactiveTintColor: "#888",
+        drawerLabelStyle: {
+          fontSize: 16,
+          fontWeight: "bold",
+        },
+      }}
+    >
       <Drawer.Screen
-        name="index" // This is the name of the page and must match the url from root
+        name="index"
         options={{
-          drawerLabel: 'Inicio',
-          title: 'Bem vindo',  
+          drawerLabel: "Inicio",
+          title: "🎮 Gamer Home",
           drawerIcon: ({ color, size }) => (
-        <Ionicons name="home-outline" size={size} color={color} />
-  ),
+            <Ionicons name="game-controller-outline" size={size} color={color} />
+          ),
         }}
       />
+
       <Drawer.Screen
-        name="form" // This is the name of the page and must match the url from root
+        name="form"
         options={{
-          drawerLabel: 'Entrar',
-          title: 'Entrar',
-            drawerIcon: ({ color, size }) => (
-        <Ionicons name="arrow-forward-circle" size={size} color={color} />
-  ),
+          drawerLabel: "Login",
+          title: "⚡ Entrar",
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="log-in-outline" size={size} color={color} />
+          ),
         }}
       />
+
       <Drawer.Screen
-        name="tabs" // This is the name of the page and must match the url from root
+        name="tabs"
         options={{
-          drawerLabel: 'Aulas',
-          title: 'Aulas',
-            drawerIcon: ({ color, size }) => (
-        <Ionicons name="clipboard" size={size} color={color} />
-  ),
+          drawerLabel: "Missões",
+          title: "🔥 Aulas",
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="rocket-outline" size={size} color={color} />
+          ),
         }}
       />
+
       <Drawer.Screen
-        name="stack" // This is the name of the page and must match the url from root
+        name="stack"
         options={{
-          drawerLabel: 'Downlaoads',
-          title: 'Downloads',
-            drawerIcon: ({ color, size }) => (
-        <Ionicons name="arrow-down" size={size} color={color} />
-  ),
+          drawerLabel: "Downloads",
+          title: "⬇ Arquivos",
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="cloud-download-outline" size={size} color={color} />
+          ),
         }}
       />
     </Drawer>
-    
   );
 }

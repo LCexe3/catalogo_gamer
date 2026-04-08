@@ -6,29 +6,34 @@ export default function useFormUsuario() {
     const [erros, setErros] = useState<any>({})
 
     useEffect(() => {
-        AsyncStorage.getItem('usuario').then((usuario) => {
-            if (usuario) {
-                setUsuario(JSON.parse(usuario))
-            }
-        })
+        carregarUsuario()
     }, [])
 
-    function validar() {
-        let erros = {}
+    async function carregarUsuario() {
+        const usuarioSalvo = await AsyncStorage.getItem('usuario')
 
-        if (!usuario.nome) {
-            erros = { ...erros, nome: 'Nome é obrigatório' }
-        } else if (usuario.nome.length < 3) {
-            erros = { ...erros, nome: 'Nome deve ter no mínimo 3 caracteres' }
+        if (usuarioSalvo) {
+            setUsuario(JSON.parse(usuarioSalvo))
         }
-
-        setErros(erros)
-        return Object.keys(erros).length === 0
     }
 
-    function salvar() {
+    function validar() {
+        let novosErros: any = {}
+
+        if (!usuario.nome) {
+            novosErros.nome = 'Nome é obrigatório'
+        } else if (usuario.nome.length < 3) {
+            novosErros.nome = 'Nome deve ter no mínimo 3 caracteres'
+        }
+
+        setErros(novosErros)
+
+        return Object.keys(novosErros).length === 0
+    }
+
+    async function salvar() {
         if (validar()) {
-            AsyncStorage.setItem('usuario', JSON.stringify(usuario))
+            await AsyncStorage.setItem('usuario', JSON.stringify(usuario))
         }
     }
 
